@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AHC Owner Dashboard</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<header><div><span>AHC</span><h1>Owner Dashboard</h1><p>Manage website photos and activities</p></div><a href="/" target="_blank">View Website ↗</a></header>
+<main>
+<section id="login" class="panel"><h2>Owner Login</h2><p>Enter the admin password to manage content.</p><input id="password" type="password" placeholder="Admin password"><button onclick="login()">LOGIN</button><small>For security, change the default password in the server environment before going live.</small></section>
+<div id="dashboard" hidden>
+  <div class="tabs"><button class="active" onclick="showTab('equipment',this)">Equipment</button><button onclick="showTab('activities',this)">Activities</button></div>
+  <section id="equipmentTab" class="panel tab">
+    <h2>Add Equipment</h2><p>Upload photos and the equipment will automatically appear in the Equipment section of the public website.</p>
+    <form id="equipmentForm" enctype="multipart/form-data">
+      <label>Equipment name<input name="name" required placeholder="e.g. Treadmill"></label>
+      <label>Description<textarea name="description" placeholder="Short description"></textarea></label>
+      <label>Photos<input name="photos" type="file" accept="image/*" multiple required></label>
+      <button>UPLOAD EQUIPMENT</button>
+    </form>
+    <div id="equipmentList" class="manage-list"></div>
+  </section>
+  <section id="activitiesTab" class="panel tab" hidden>
+    <h2>Add Activity</h2><p>Add events, challenges, training programs or other activities conducted at the gym.</p>
+    <form id="activityForm" enctype="multipart/form-data">
+      <label>Activity title<input name="title" required placeholder="e.g. Independence Day Fitness Challenge"></label>
+      <label>Date<input name="date" type="date"></label>
+      <label>Description<textarea name="description" placeholder="What happened?"></textarea></label>
+      <label>Photos<input name="photos" type="file" accept="image/*" multiple required></label>
+      <button>UPLOAD ACTIVITY</button>
+    </form>
+    <div id="activityList" class="manage-list"></div>
+  </section>
+</div>
+</main>
+<script src="admin.js"></script>
+</body></html>
