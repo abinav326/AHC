@@ -1,0 +1,1 @@
+{"name":"anaswara-health-club-vercel","version":"2.0.0","private":true,"scripts":{"build":"node generate-gallery.js"}}
